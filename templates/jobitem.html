@@ -1,0 +1,25 @@
+<div class="border-bottom row" style="padding-bottom:2px; margin-bottom:26px">
+  <div class="col-11">
+  <h4 class="lead fs-5 text-secondary fw-bolder" style=>
+    Job role: 
+    <div class="fw-semibold">{{job['title']}}</div>
+  </h4>
+<div>
+  <h4 class="lead fs-6">
+    <b>Location: </b>
+    {{job['location']}}
+  </h4>
+</div>
+{% if 'salary' in job %}
+<div>
+  <h4 class="lead fs-6 mb-2">
+    <b>Salary: </b>
+    {{job['salary']}}
+  </h4>
+</div>
+{% endif %}
+  </div>
+  <div class="col-1">
+  <button type="button" class="btn btn-outline-info position-relative top-40 start-10">Apply</button>
+</div>
+</div>

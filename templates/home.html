@@ -4,83 +4,50 @@
     <title>
       Lorem Ipsum
     </title>
-    <style>
-      h1 {
-        font-size: 40px;
-        font-family: Georgia;
-        font-weight: bold;
-        color: rgb(150,150,100);
-        text-align: center;
-      }
-      #resume {
-        width: 50%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      h2 {
-        font-family: Georgia;
-        font-size: 32px;
-        font-weight: normal;
-        color: rgb(50, 50, 50);
-        text-align: left;
-      }
-      h3 {
-        font-size: 32px;
-      }
-      .bodytext {
-        font-family: Roboto;
-        font-size: 20px;
-        font-weight: normal;        
-      }
-      p {
-        font-size: 10px;
-        font-family: Arial;
-      }
-      #container {
-        max-width: 900px;
-        margin: 0 auto 0 auto;
-        
-      }
-      #but {
-        font-size: 30px;
-        text-align: center;
-      }
-      
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-    <div id="container">
-      <h1>
+    <div class="container">
+      <h1 class="fw-bold text-center mt-4 mb-2"><u>
       Lorem Ipsum
-      </h1>
-      <p class="bodytext">
+      </u></h1>
+      <p class="lead">
         Eu nisl nunc mi ipsum faucibus vitae. Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Lacus luctus accumsan tortor posuere ac ut. Vitae elementum curabitur vitae nunc sed velit. Sem viverra aliquet eget sit. Est consectetur aliquid et beatae doloremque aut similique velit. Et odit maxime est soluta laboriosam sit explicabo doloribus ea voluptas natus eum expedita facilis et vitae consequatur. Ut animi quos et omnis delectus et tenetur ipsa non sapiente odit ut libero dolorem.
       </p>
-      <h2>
-      Introduction
+      <h2 class="fw-semibold">
+      Image
       </h2>
-      <img id="resume" src="https://sample-website-1.avichals.repl.co/static/Resume.jpg">
-      <h2>
+      <img class="img-fluid" id="resume" src="https://sample-website-1.avichals.repl.co/static/Resume.jpg">
+      <h2 class="fw-semibold">
         About me
       </h2>
-      <p class="bodytext">
+      <p class="lead">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et rerum blanditiis sit voluptas fugiat quo quia atque id accusantium sunt aut neque internos. Et Quis illum sit maiores veniam et nobis similique! Est doloremque vero eos nulla quasi ut delectus voluptate a numquam voluptas id eligendi tempora non deserunt ipsam qui reiciendis veritatis.
       </p>
-      <h3 style="text-align: center">
+      <h2 class="fw-semibold">
+        Experience
+      </h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}        
+        {% endfor %}
+      </div>
+      <h3 class="fw-normal fst-italic text-center">
         Contact me
       </h3>
-      <div id="but">
-      <button>
+      <div class="text-center">
+      <button class="btn btn-info btn-lg ms-2 mt-2">
         via Mail
       </button>
-      <button>
+      <button class="btn btn-info btn-lg ms-2 mt-2">
         via LinkedIn
       </button>
-      <button>
+      <button class="btn btn-info btn-lg ms-2 mt-2">
         via Form
       </button>
-        <p>
+        <p class="mt-3">
           Copyright 2022, Ipsum
         </p>
       </div>
