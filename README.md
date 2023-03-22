@@ -1,2 +1,3 @@
-# sample-website-1
-Website development and deployment attempt 1.
+# Sample-Website
+Website development and deployment through replit and render.
+Using Flask and HTML/CSS concepts.
