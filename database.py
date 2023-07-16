@@ -33,15 +33,14 @@ def load_job(id):
 
 
 def add_app(job_id, data):
+  full_name = data['full_name']
+  email = data['email']
+  linkedin = data['linkedin']
+  education = data['education']
+  experience = data['experience']
+  resume = data['resume']
   with engine.connect() as conn:
     query = text(
-      "INSERT INTO applications (job_id, full_name, email, linkedin, education, experience, resume) VALUES (:job_id, :full_name, :email, :linkedin, :education, :experience, :resume)"
+      f"INSERT INTO applications (job_id, full_name, email, linkedin, education, experience, resume) VALUES ({job_id}, '{full_name}', '{email}', '{linkedin}', '{education}', '{experience}', '{resume}')"
     )
-    conn.execute(query,
-                 job_id=job_id,
-                 full_name=data['full_name'],
-                 email=data['email'],
-                 linkedin=data['linkedin'],
-                 education=data['education'],
-                 experience=data['experience'],
-                 resume=data['resume'])
+    conn.execute(query)

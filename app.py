@@ -12,6 +12,7 @@ def hello_world():
 
 @app.route("/api/jobs")
 def list_jobs():
+  jobs = load_jobs()
   return jsonify(jobs)
 
 
@@ -22,15 +23,17 @@ def show_job(id):
     return "Not found", 404
   return render_template('jobpage.html', job=job)
 
+
 @app.route("/api/job/<id>")
 def show_job_json(id):
   job = load_job(id)
   return jsonify(job)
 
 
-@app.route("/job/<id>/apply", methods=['post'])
+@app.route("/job/<id>/apply", methods=["post"])
 def apply_to_job(id):
   data = request.form
+  # return jsonify(data)
   job = load_job(id)
   add_app(id, data)
   return render_template('app_sub.html', application=data, job=job)
